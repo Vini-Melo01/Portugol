@@ -1,1 +1,35 @@
 # Portugol
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muito cuidado, todo mundo que lê isso automaticamente abre um sorrisão
