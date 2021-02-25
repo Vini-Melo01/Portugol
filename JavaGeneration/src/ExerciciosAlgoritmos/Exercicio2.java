@@ -16,6 +16,7 @@ public class Exercicio2 {
 		anos = diasDeVida/365;
 		meses = (diasDeVida % 365)/30;
 		dias = (diasDeVida%365)%30;
+		
 		System.out.println("voce possui aproximadamente: "+anos+" ano(s) "+meses+" mese(s) "+" e "+ dias+ " dia(s) de vida ");
 				
 	}
