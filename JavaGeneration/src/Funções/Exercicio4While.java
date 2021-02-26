@@ -34,19 +34,19 @@ public class Exercicio4While {
 		if(temperamento == 1) {
 			contador++;
 		}
-		else if (temperamento == 2 && sexo == 1) {
+		 if (sexo == 1 && temperamento == 2) {
 			contador2++;
 		}
-		else if(temperamento == 3 && sexo == 2) {
+		 if(sexo == 2 && temperamento == 3) {
 			contador3++;
 		}
-		else if(temperamento == 1 && sexo == 3) {
+		 if(sexo == 3 && temperamento == 1) {
 			contador4++;
 		}
-		else if(idade>40 && temperamento == 2) {
+		 if(idade>40 && temperamento == 2) {
 			contador5++;
 		}
-		else if(idade<18 && temperamento == 1) {
+		 if(idade<18 && temperamento == 1) {
 			contador6++;
 		}
 		pessoas = pessoas +1;
