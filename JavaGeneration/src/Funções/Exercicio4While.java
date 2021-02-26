@@ -18,15 +18,19 @@ public class Exercicio4While {
 		
 		
 		while(pessoas<=2) {
+			
 		System.out.println("Qual a sua idade?: ");
 		idade = leia.nextInt();
+		
 		System.out.println("Qual o seu sexo? 1-Feminino / 2-Masculino / 3-Outros: ");
 		sexo = leia.nextInt();
 		System.out.printf("Você se considera um(a): %S",sexo(sexo));
+		
 		System.out.println("Você se considera uma pessoa:? 1-Calma / 2-Nervosa / 3-Agressiva: ");
 		temperamento = leia.nextInt();
 		System.out.printf("Você se considera uma pessoa: %S",temperamento(temperamento));
-		temperamento(temperamento);
+		
+		
 		if(temperamento == 1) {
 			contador++;
 		}
