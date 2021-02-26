@@ -20,6 +20,7 @@ public class Exercicio1 {
 		
 		if(numero2>maiorNumero) {
 			maiorNumero=numero2;
+			
 		}
 		if(numero3>maiorNumero) {
 			maiorNumero=numero3;

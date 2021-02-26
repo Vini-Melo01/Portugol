@@ -13,7 +13,7 @@ public class Exercicio4 {
 			numRaiz = Math.sqrt(num);
 			System.out.printf("O numero é %f (par), sua raiz é: %f",num,numRaiz);
 		}
-		else if(num %2 != 0);{
+		else {
 		numQuadrado = Math.pow(num,2);
 		System.out.printf("O numero é %f (ímpar), seu quadrado é: %f",num,numQuadrado);
 		}
