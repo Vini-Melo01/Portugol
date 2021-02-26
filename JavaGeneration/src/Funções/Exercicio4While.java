@@ -8,7 +8,7 @@ public class Exercicio4While {
 		int idade;
 		int sexo = 0 ;
 		int temperamento = 0;
-		int pessoas = 0;
+		int pessoas = 1;
 		int contador = 0;
 		int contador2 = 0;
 		int contador3 = 0;
@@ -17,7 +17,7 @@ public class Exercicio4While {
 		int contador6= 0;
 		
 		
-		while(pessoas<=150) {
+		while(pessoas<=2) {
 		System.out.println("Qual a sua idade?: ");
 		idade = leia.nextInt();
 		System.out.println("Qual o seu sexo? 1-Feminino / 2-Masculino / 3-Outros: ");
@@ -27,7 +27,7 @@ public class Exercicio4While {
 		temperamento = leia.nextInt();
 		System.out.printf("Você se considera uma pessoa: %S",temperamento(temperamento));
 		temperamento(temperamento);
-		if(temperamento ==1) {
+		if(temperamento == 1) {
 			contador++;
 		}
 		else if (temperamento == 2 && sexo == 1) {
