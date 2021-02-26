@@ -16,7 +16,9 @@ public class Exercicio2 {
 		
 		System.out.println("Escreva o terceiro numero: ");
 		numero3= ler.nextDouble();
-		
+		//N1 = N1,N2,N3 + N1,N3,N2
+		//N2 = N2,N1,N3 + N2,N3,N1
+		//N3 = N3,N1,N2 + N3,N2,N1
 		if(numero1<=numero2 && numero3>=numero2) {
 			System.out.printf("A sequencia decrescente é : %f, %f, %f",numero1,numero2,numero3);
 		}
