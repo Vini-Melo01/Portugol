@@ -15,6 +15,7 @@ public class Conta {
 	private Double limiteEstudantil = 5000.0;
 	private double valor = 0.0;
 	private int opcao;
+	private int opcao2;
 	private int contador;
 	
 	
@@ -85,16 +86,37 @@ public class Conta {
 			contador++;
 		}
 		
-		if(valor>saldo && valor>limiteEstudantil) {
+		else if(valor>saldo && valor>limiteEstudantil+saldo) {
 			System.out.println("Você não possui saldo nem limite estudantil suficiente para debitar esse valor.");
 		}
 		
-		 if(valor>this.saldo && valor<limiteEstudantil) {
+		else if(valor>this.saldo && valor<=limiteEstudantil+saldo) {
 				System.out.println("O saldo é menor do que o valor a ser debitado, deseja usar o Limite Estudantil?\n[1]Sim\n[2]Nao");
 				opcao = leia.nextInt();
-					if(opcao == 1) {
+					if(opcao == 1 && saldo<=0) {
 						this.limiteEstudantil = this.limiteEstudantil - valor;
 						contador++;
+					}
+					if(opcao == 1 && saldo>0) {
+						System.out.printf("Você possui %.2f de saldo, deseja usar esse saldo para completar o débito?\n[1]Sim\n[2]Não",this.saldo);
+						opcao2 = leia.nextInt();
+							if(opcao2 ==1) {
+								valor = valor - this.saldo;
+								this.saldo = this.saldo - this.saldo;
+								this.limiteEstudantil = this.limiteEstudantil - valor;
+								contador++;
+							}
+							else {
+								if(valor > this.limiteEstudantil) {
+									System.out.println("Você não possui limite estudantil o suficiente para completar a transação.");
+								}
+								else {
+									this.limiteEstudantil = this.limiteEstudantil - valor;
+									contador++;
+								}
+								
+							}
+						
 					}
 					if(opcao == 2) {
 						
