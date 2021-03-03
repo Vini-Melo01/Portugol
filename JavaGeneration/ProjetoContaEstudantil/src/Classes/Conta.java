@@ -18,6 +18,8 @@ public class Conta {
 	private int opcao2;//caso desejem usar o saldo para juntar com o limite estudantil e fazer o débito
 	private int contador;//contador para contar o numero de transações
 	
+	//métodos-encapsulamento:
+	
 	//contador de transações
 	public int getContador() {
 		return contador;
@@ -57,6 +59,7 @@ public class Conta {
 		public String getNome() {
 			return nome;
 		}
+	// Construtores:
 	// aqui a conta pode ser criada com cpf, estado da conta e nome, no caso eu não utilizei, só utilizei cpf e nome.
 	public Conta(int numero, String cpf,String nome, boolean ativa) {
 		numero = gerador.nextInt(2000);
