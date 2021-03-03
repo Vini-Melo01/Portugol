@@ -47,7 +47,7 @@ public class MainPrograma {
 								+ " Nome: %s \n Numero da conta: %d\n Seu CPF: %s\n Saldo atual: %.3f\n SaldoEstudantil: %.3f\n" 
 										,conta.getNome() , conta.getNumero(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil());
 						
-						for(int y=0;y<10;y++) {
+						for(int y=0;conta.getContador()<10;y++) {
 						System.out.println("Deseja movimentar a conta com [1]Débito ou [2]Crédito? ");
 						opcao2= leia.nextInt();
 							
