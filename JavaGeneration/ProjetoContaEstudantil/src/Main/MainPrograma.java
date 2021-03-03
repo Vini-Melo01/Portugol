@@ -87,6 +87,9 @@ public class MainPrograma {
 						}
 				}
 			}
+			else {
+				System.out.println("rala rapá");
+			}
 		}
 	}
 
