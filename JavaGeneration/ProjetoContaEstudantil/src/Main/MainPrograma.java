@@ -45,7 +45,7 @@ public class MainPrograma {
 						Conta conta = new Conta(nome,numero,cpf);
 						System.out.printf("Sua conta estudantil foi criada com sucesso!!\n Dados da conta\n"
 								+ " Nome: %s \n Numero da conta: %d\n Seu CPF: %s\n Saldo atual: %.3f\n SaldoEstudantil: %.3f\n" 
-										,conta.getNome() , conta.getNumero(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil());
+									,conta.getNome() , conta.getNumero(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil());
 						
 						for(int y=0;conta.getContador()<10;y++) {// aqui fica o loop pra ele rodar até o contador for menor que 10
 							System.out.println("Deseja movimentar a conta com [1]Débito ou [2]Crédito? ");//ele pergunta se qr débito ou crédito
@@ -55,13 +55,13 @@ public class MainPrograma {
 								System.out.println("Deseja continuar?\n[1]Sim\n[2]Não");
 										opcao3= leia.nextInt();
 											if(opcao3!=2) {
-												System.out.println("Qual valor deseja creditar na sua conta?");
-													valor = leia.nextDouble();
-													conta.credito(valor);
-														System.out.printf("Dados da conta\n"
-																+ " Nome: %s \n Numero da conta: %d\n Seu CPF: %s\n Saldo atual: %.3f\n SaldoEstudantil: %.3f\n Movimentos feito na conta: %d\n" 
-																,conta.getNome() , conta.getNumeroconta(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil(), conta.getContador());
-													}
+											System.out.println("Qual valor deseja creditar na sua conta?");
+											valor = leia.nextDouble();
+											conta.credito(valor);
+											System.out.printf("Dados da conta\n"
+											+ " Nome: %s \n Numero da conta: %d\n Seu CPF: %s\n Saldo atual: %.3f\n SaldoEstudantil: %.3f\n Movimentos feito na conta: %d\n" 
+											,conta.getNome() , conta.getNumeroconta(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil(), conta.getContador());
+												}
 											
 											if(opcao3==2)
 											{
@@ -72,12 +72,12 @@ public class MainPrograma {
 								System.out.println("Deseja continuar?\n[1]Sim\n[2]Não");
 									opcao3= leia.nextInt();
 										if(opcao3!=2) {
-											System.out.println("Qual valor deseja debitar da sua conta?");
-												valor = leia.nextDouble();
-													conta.debito(valor);
-														System.out.printf("Dados da conta\n"
-																+ " Nome: %s \n Numero da conta: %d\n Seu CPF: %s\n Saldo atual: %.3f\n SaldoEstudantil: %.3f\n Movimentos feito na conta: %d\n" 
-																,conta.getNome() , conta.getNumeroconta(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil(), conta.getContador());
+										System.out.println("Qual valor deseja debitar da sua conta?");
+										valor = leia.nextDouble();
+										conta.debito(valor);
+										System.out.printf("Dados da conta\n"
+										+ " Nome: %s \n Numero da conta: %d\n Seu CPF: %s\n Saldo atual: %.3f\n SaldoEstudantil: %.3f\n Movimentos feito na conta: %d\n" 
+										,conta.getNome() , conta.getNumeroconta(), conta.getCpf(), conta.getSaldo(), conta.getlimiteEstudantil(), conta.getContador());
 											}
 										if(opcao3==2)
 										{
