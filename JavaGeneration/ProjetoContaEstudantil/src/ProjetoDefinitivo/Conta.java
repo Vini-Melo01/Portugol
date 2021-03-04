@@ -1,13 +1,14 @@
 package ProjetoDefinitivo;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public abstract class Conta {
-	protected int numero;
-	protected String cpf;
-	public double saldo;
-	protected boolean ativa;
-	protected int contador;
+	private int numero;
+	private String cpf;
+	//depois alterar para private
+	protected double saldo;
+	private boolean ativa;
 	
 	private double[] movimento = new double[10];
 	
@@ -221,13 +222,5 @@ public abstract class Conta {
 			
 		}while(opcao != '0');
 	
-	}
-
-	public int getContador() {
-		return contador;
-	}
-
-	public void setContador(int contador) {
-		this.contador = contador;
 	}
 }
