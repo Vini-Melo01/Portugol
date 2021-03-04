@@ -1,4 +1,4 @@
-package Classes;
+package ProjetoTeste;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class Conta {
 	private String nome = " ";//retornar o nome do cidadão
 	private Random gerador = new Random();//gera um numero da conta aleatorio, até 2000
 	private Double limiteEstudantil = 5000.0;//limite estudantil de 5000 reais
-	private double valor = 0.0;//inicializei valor mas não sei pq, vai q da problema em algo
+	protected double valor = 0.0;//inicializei valor mas não sei pq, vai q da problema em algo
 	private int opcao;//caso escolham usar o limite estudantil
 	private int opcao2;//caso desejem usar o saldo para juntar com o limite estudantil e fazer o débito
 	private int contador;//contador para contar o numero de transações
@@ -126,10 +126,11 @@ public class Conta {
 			}
 	}
 	// aqui é a formula do crédito
-	public void credito(double valor) {
+	public  void credito(double valor) {
 		this.saldo = this.saldo + valor;
 		contador++;
 	}
 	
 
 }
+

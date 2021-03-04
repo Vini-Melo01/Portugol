@@ -1,8 +1,8 @@
-package Main;
+package ProjetoTeste;
 
 import java.util.Scanner;
 
-import Classes.Conta;
+import ProjetoTeste.Conta;
 
 public class MainPrograma {
 		
@@ -92,4 +92,3 @@ public class MainPrograma {
 			}
 		}
 	}
-
