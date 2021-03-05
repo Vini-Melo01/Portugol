@@ -1,6 +1,5 @@
 package ProjetoDefinitivo;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class ContaEstudantil extends Conta {
@@ -33,6 +32,13 @@ public class ContaEstudantil extends Conta {
 		if(this.getSaldo() >= valor) {
 			this.saldo = this.getSaldo() - valor;
 			this.contador++;
+			
+			System.out.println("Saque realizado com sucesso!!");
+			System.out.println("R$ "+ this.getSaldo());
+			
+			this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor);
+			
+			this.setContarMovimentacao(this.getContarMovimentacao() + 1);
 		}
 		// aqui ele tenta debitar mas o valor que tem na conta e no limite estudantil é menor do q a conta q ele qr pagar(debito)
 		// VERIFICAR ESSA LOGICA
@@ -51,6 +57,10 @@ public class ContaEstudantil extends Conta {
 						
 						contador++;
 						
+						this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor, this.getLimiteEstudantil());
+						
+						this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+						
 					}
 					if(opcao == 1 && saldo>0) {// aqui ele checa se tem algo no saldo, e pergunta se qr utilizar o saldo pra completar pra pagar a conta
 						System.out.printf("Você possui %.2f de saldo, deseja usar esse saldo para completar o débito?\n[1]Sim\n[2]Não",this.saldo);
@@ -65,6 +75,10 @@ public class ContaEstudantil extends Conta {
 								
 								contador++;
 								
+								this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor, this.getLimiteEstudantil());
+								
+								this.setContarMovimentacao(this.getContarMovimentacao() + 1);
+								
 							}
 							else {// aqui se você recusar a usar o saldo que tem, ele checa se a conta é maior que o limite estudantil e bloqueia o débito se for
 								
@@ -75,6 +89,10 @@ public class ContaEstudantil extends Conta {
 								else {//aqui se a conta for menor que o limite estudantil, ele debita do limite sem mexer no saldo
 									this.setLimiteEstudantil(this.getLimiteEstudantil() - valor);
 									contador++;
+									
+									this.gravarMovimentacaoDebito(this.getContarMovimentacao(), this.getSaldo(), valor, this.getLimiteEstudantil());
+									
+									this.setContarMovimentacao(this.getContarMovimentacao() + 1);
 									
 								}
 								
@@ -87,92 +105,5 @@ public class ContaEstudantil extends Conta {
 						
 					}
 			}
-	}
-	
-	@Override
-	public void menuPerfil() {
-		Random aleatorio = new Random();
-		Scanner entradaDados = new Scanner(System.in);
-		
-		int opcao;
-		int valor = 0;
-		
-		// MENU | PERFIL DE CONTA
-		System.out.println("Ola, seja bem vindo ao BBBank");
-		System.out.println("Bom, Bonito e Barato");
-		
-		System.out.println();
-		System.out.println("Seja Bem-Vindo a sua Conta Especial");
-		System.out.println("Numero Conta: "+ this.getNumero());
-		
-		do {
-			System.out.println("1 | VERIFICAR SALDO");
-			System.out.println("2 | VERIFICAR DADOS CADASTRAIS");
-			System.out.println("3 | CREDITAR");
-			System.out.println("4 | DEBITAR");
-			System.out.println("0 | LOGOUT");
-			
-			System.out.print("==> "); 
-			opcao = entradaDados.next().charAt(0);
-			entradaDados.nextLine();
-			
-			switch(opcao) {
-				case '1':
-					System.out.println("MENU | VERIFICAR SALDO");
-					System.out.println();
-					
-					System.out.println("Saldo Conta: "+ this.getSaldo());
-					//System.out.println("Limite de Credito: "+ this.getLimite());
-					System.out.println();
-				break;
-				
-				case '2':
-					System.out.println("MENU | MEU DADOS");
-					System.out.println();
-					
-					System.out.println("Conta: "+ this.getNumero());
-					System.out.println("CPF: "+ this.getCpf());
-					System.out.println("Saldo Conta: "+ this.getSaldo());
-					System.out.println("Limite de Credito: "+ this.getLimiteEstudantil());
-					System.out.println();
-				break;
-				
-				case '3':
-					System.out.println("MENU | CREDITAR");
-					System.out.println();
-					
-					System.out.println("Quanto voce deseja depositar? ");
-					System.out.print("R$ ");
-					valor = entradaDados.nextInt();
-					
-					this.credito(valor);
-					System.out.println();
-				break;
-				
-				case '4':
-					System.out.println("MENU | DEBITAR");
-					System.out.println();
-					
-					System.out.println("Quanto voce deseja sacar? ");
-					System.out.print("R$ ");
-					valor = entradaDados.nextInt();
-					
-					this.debito(valor);
-					System.out.println();
-				break;
-				
-				case '0':
-					System.out.println("LOGOUT");
-					System.out.println();
-				break;
-				
-				default:
-					System.out.println("Opcao invalida, tente novamente!");
-					System.out.println();
-				break;
-			}
-			
-		}while(opcao != '0');
-	
 	}
 }
