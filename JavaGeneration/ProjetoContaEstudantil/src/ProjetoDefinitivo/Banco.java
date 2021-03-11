@@ -1,5 +1,8 @@
 package ProjetoDefinitivo;
 
+/*import java.util.ArrayList;
+import java.util.List;*/
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,8 +26,8 @@ public class Banco {
 		double emprestimo;
 		
 		do {
-			System.out.println("Ola, seja bem vindo ao Connect Banck.");
-			System.out.println("Encurtando distancias entre seus objetivos.");
+			System.out.println("Ola, seja bem vindo ao Connect Bank.");
+			System.out.println("Bom, Bonito e Barato");
 			System.out.println("O que voce gostaria de fazer hoje?");
 			
 			System.out.println();
@@ -259,19 +262,19 @@ public class Banco {
 				                    
 				                    System.out.println();
 				                    
-				                    if(opcaoPerfil != 'S' && opcao != 'N'){ 
+				                    if(opcaoPerfil != 'S' || opcao != 'N'){ 
 				                    	System.out.println("Opcao invalida!");
 				                    	
 				                	}else if(opcaoPerfil == 'S') {
 				                		cc.pedeTalao();
-				                    	System.out.println("Talao solicitado!");
+				                    	/*System.out.println("Talao solicitado!");*/
 				                    
 				                    }else if(opcaoPerfil == 'N') {
 				                    	System.out.println("Se mudar de ideia, entre em contato!");
 				                    	
 				                    }
 				                	
-				                } while(opcaoPerfil != 'S' && opcao != 'N');
+				                } while(opcaoPerfil != 'S' && opcaoPerfil != 'N');
 				                
 				                System.out.println();
 							break;
@@ -338,17 +341,24 @@ public class Banco {
 					}while(opcaoPerfil != '0');
 					
 					do{
-			        	System.out.println("Você atingiu o limite de transações mensais. Deseja solicitar um cheque? S/N");
-			        	opcaoPerfil = entradaDados.next().toUpperCase().charAt(0);
-			            
-			            if(opcaoPerfil == 'S' && cc.getContadorTalao() < 3) {
-			                cc.pedeTalao();
-			                System.out.println("Taloes pedidos ate o momento: "+ cc.getContadorTalao());
-			                    
-			            } else {
-			                System.out.println("Saldo Atual: " + cc.getSaldo());
-			                opcaoPerfil = 'N';
-			            }
+						/*AJUSTAR*/
+						if(cc.getContarMovimentacao() < 10) {
+							opcaoPerfil = 'N';
+				            
+						}else {
+							
+							System.out.println("Você atingiu o limite de transações mensais. Deseja solicitar um cheque? S/N");
+				        	opcaoPerfil = entradaDados.next().toUpperCase().charAt(0);
+				            
+				            if(opcaoPerfil == 'S' && cc.getContadorTalao() < 3) {
+				                cc.pedeTalao();
+				                System.out.println("Taloes pedidos ate o momento: "+ cc.getContadorTalao());
+				                    
+				            } else {
+				                System.out.println("Saldo Atual: " + cc.getSaldo());
+				                opcaoPerfil = 'N';
+				            }
+						}
 			    		
 			    	} while(opcaoPerfil != 'N');
 					
